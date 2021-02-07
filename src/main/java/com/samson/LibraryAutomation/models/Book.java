@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -55,5 +57,17 @@ public class Book {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public List<Book> findByName(List<Book> all, String name) {
+
+        List<Book> bookList = new ArrayList<>();
+
+        for (Book value: all) {
+            if (value.getName().equals(name)){
+                bookList.add(value);
+            }
+        }
+        return bookList;
     }
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class BookController {
 
@@ -30,10 +32,14 @@ public class BookController {
 
     @GetMapping("/searchBook")
     public String searchBook(ModelMap modelMap,
-                             @RequestParam String name, @RequestParam String filter){
+                             @RequestParam String name){
 
+        Book book = new Book();
+        List<Book> bookList = book.findByName(bookRepo.findAll(), name);
 
-        return "index";
+        modelMap.put("booksList", bookList);
+
+        return "test";
     }
 
     @GetMapping("/deleteBook/{id}")

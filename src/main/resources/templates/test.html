@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Status</th>
+            </tr>
+            <tr th:each ="book : ${booksList}">
+                <td th:utext="${book.name}">...</td>
+                <td th:utext="${book.author}">...</td>
+                <td th:utext="${book.status}">...</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <form th:action="@{/searchBook}" method="get">
+            <input required  type="text" name="name" placeholder="name of book">
+            <button type="submit">Ok</button>
+        </form>
+    </div>
+
+</body>
+</html>
