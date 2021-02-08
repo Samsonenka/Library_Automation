@@ -1,0 +1,19 @@
+html {
+    font-family: sans-serif;
+}
+body {
+    height: 100%;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+@import 'blocks/header';
+@import 'blocks/table';
+@import 'blocks/footer';
+@import 'blocks/button';
+@import 'blocks/modal';
+
+
+

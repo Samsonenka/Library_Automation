@@ -1,0 +1,55 @@
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    top: 0;
+}
+
+.modal {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    width: 500px;
+    padding: 50px;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 70px;
+        input {
+            font-size: 18px;
+            margin-bottom: 15px;
+            height: 35px;
+            border: 3px solid black;
+        }
+
+    }
+    &__button {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 15px;
+    }
+    &_add {
+        min-height: 400px;
+        display: none;
+    }
+    &_search {
+        display: none;
+    }
+    &__close {
+        position: absolute;
+        top: 0;
+        right: -40px;
+        font-size: 40px;
+        line-height: 20px;
+        color: black;
+        cursor: pointer;
+    }
+
+
+}
