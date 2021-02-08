@@ -21,7 +21,12 @@
     </div>
     <div>
         <form th:action="@{/searchBook}" method="get">
-            <input required  type="text" name="name" placeholder="name of book">
+            <select name="filter" id="filter">
+                <option value="book">Book</option>
+                <option value="author">Author</option>
+            </select>
+            <br>
+            <input required  type="text" name="name" placeholder="">
             <button type="submit">Ok</button>
         </form>
     </div>

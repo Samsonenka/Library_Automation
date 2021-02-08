@@ -59,15 +59,44 @@ public class Book {
         this.status = status;
     }
 
-    public List<Book> findByName(List<Book> all, String name) {
+    public List<Book> findByBook(List<Book> all, String book) {
 
         List<Book> bookList = new ArrayList<>();
 
         for (Book value: all) {
-            if (value.getName().equals(name)){
+            if (value.getName().equals(book)){
                 bookList.add(value);
             }
         }
         return bookList;
     }
+
+    public List<Book> findByAuthor(List<Book> all, String author){
+
+        List<Book> bookList = new ArrayList<>();
+
+        for (Book value: all) {
+            if (value.getAuthor().equals(author)){
+                bookList.add(value);
+            }
+        }
+        return bookList;
+    }
+
+    public List<Book> findBook(List<Book> all, String filter, String name){
+
+        List<Book> bookList = new ArrayList<>();
+
+        switch (filter){
+
+            case "book":
+                bookList = findByBook(all, name);
+                break;
+            case "author":
+                bookList = findByAuthor(all, name);
+                break;
+        }
+        return bookList;
+    }
+
 }

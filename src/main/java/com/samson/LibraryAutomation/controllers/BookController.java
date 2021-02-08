@@ -32,10 +32,10 @@ public class BookController {
 
     @GetMapping("/searchBook")
     public String searchBook(ModelMap modelMap,
-                             @RequestParam String name){
+                             @RequestParam String name, @RequestParam String filter){
 
         Book book = new Book();
-        List<Book> bookList = book.findByName(bookRepo.findAll(), name);
+        List<Book> bookList = book.findBook(bookRepo.findAll(), filter, name);
 
         modelMap.put("booksList", bookList);
 
