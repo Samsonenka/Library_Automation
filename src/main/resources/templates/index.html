@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Library</title>
-        <link rel="stylesheet" href="../static/bootstrap-reboot.min.css">
-        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header class="header">
@@ -31,7 +31,6 @@
                         <div class="table__header">
                             <div class="table__colomn">book</div>
                             <div class="table__colomn">author</div>
-                            <div class="table__colomn">position</div>
                             <div class="table__colomn">status</div>
                             <div class="table__colomn">del</div>
                             <div class="table__colomn">change</div>
@@ -40,11 +39,10 @@
                         </div>
                         <div class="table__scroll">
                             <table cellpadding="7">
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
+                                <tr class="table__user" th:each ="book : ${booksList}">
+                                    <td class="table__colomn table__name" th:utext="${book.name}"></td>
+                                    <td class="table__colomn table__surname" th:utext="${book.author}"></td>
+                                    <td class="table__colomn table__book" th:utext="${book.status}"></td>
                                     <td class="table__colomn table__button">
                                         <button class="button">delete</button>
                                     </td>
@@ -58,150 +56,6 @@
                                         <button class="button button_i" data-modal="user">i</button>
                                     </td>
                                 </tr>
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
-                                    </td>
-                                </tr>
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
-                                    </td>
-                                </tr> 
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
-                                    </td>
-                                </tr>
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
-                                    </td>
-                                </tr>
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
-                                    </td>
-                                </tr>
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
-                                    </td>
-                                </tr>
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
-                                    </td>
-                                </tr> 
-                                <tr class="table__user">
-                                    <td class="table__colomn table__name">name</td>
-                                    <td class="table__colomn table__surname">surname</td>
-                                    <td class="table__colomn table__book">position</td>
-                                    <td class="table__colomn table__author">status</td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
-                                    </td>
-                                </tr>               
                             </table>
                         </div>
                         
@@ -482,18 +336,23 @@
                         
             </div>
 
+<!--            find Books By Author or book's name-->
             <div class="modal modal_search" id="search">
                 <div class="modal__close">
                     &times;
                 </div>
-                <form action="#">
-                    <input name="Search" required placeholder="Search" type="text">
-                </form>
-                <div class="modal__button">
-                    <div>
-                        <button class="button">ok</button>
+                <form th:action="@{/searchBook}" method="get">
+                    <select name="filter" id="filter">
+                        <option value="book">Book</option>
+                        <option value="author">Author</option>
+                    </select>
+                    <input name="name" required placeholder="Search" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
                     </div>
-                </div>
+                </form>
                         
             </div>
         </div>

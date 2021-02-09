@@ -27,7 +27,7 @@ public class BookController {
 
         modelMap.put("booksList", bookRepo.findAll());
 
-        return "test";
+        return "index";
     }
 
     @GetMapping("/searchBook")
@@ -39,7 +39,7 @@ public class BookController {
 
         modelMap.put("booksList", bookList);
 
-        return "test";
+        return "index";
     }
 
     @GetMapping("/deleteBook/{id}")

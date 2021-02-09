@@ -17,6 +17,6 @@ public class MainController {
 
         modelMap.put("booksList", bookRepo.findAll());
 
-        return  "test";
+        return  "index";
     }
 }
