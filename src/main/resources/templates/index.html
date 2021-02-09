@@ -317,23 +317,22 @@
         <footer class="footer">
         </footer>
 
+<!--        add book-->
         <div class="overlay">
             <div class="modal modal_add" id="add">
                 <div class="modal__close">
                     &times;
                 </div>
-                <form action="#">
+                <form th:action="@{/addBook}" method="post">
                     <input name="name" required placeholder="Name" type="text">
-                    <input name="surname" required placeholder="Surname" type="text">
-                    <input name="book" required placeholder="Book" type="text">
-                    <input name="author" required placeholder="Author" type="text">
-                </form>
-                <div class="modal__button">
-                    <div>
-                        <button class="button">ok</button>
+                    <input name="author" required placeholder="Surname" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
                     </div>
-                </div>
-                        
+                </form>
+
             </div>
 
 <!--            find Books By Author or book's name-->
