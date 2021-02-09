@@ -45,6 +45,9 @@ public class BookController {
     @GetMapping("/deleteBook/{id}")
     public String deleteBook(@PathVariable int id){
 
+        Book book = bookRepo.findById(id).get();
+        bookRepo.delete(book);
+
         return "redirect:/";
     }
 }

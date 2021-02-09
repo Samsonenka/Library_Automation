@@ -32,9 +32,9 @@
                             <div class="table__colomn">book</div>
                             <div class="table__colomn">author</div>
                             <div class="table__colomn">status</div>
-                            <div class="table__colomn">del</div>
+                            <div class="table__colomn">delete</div>
                             <div class="table__colomn">change</div>
-                            <div class="table__colomn">give</div>
+                            <div class="table__colomn">give out</div>
                             <div class="table__colomn">i</div>
                         </div>
                         <div class="table__scroll">
@@ -44,16 +44,18 @@
                                     <td class="table__colomn table__surname" th:utext="${book.author}"></td>
                                     <td class="table__colomn table__book" th:utext="${book.status}"></td>
                                     <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
+                                        <a th:href="@{'/deleteBook/' + ${book.id}}">
+                                            <button class="button">delete</button>
+                                        </a>
                                     </td>
                                     <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
+                                        <button class="button">change</button>
                                     </td>
                                     <td class="table__colomn table__button">
-                                        <button class="button">delete</button>
+                                        <button class="button">give</button>
                                     </td>
                                     <td class="table__colomn table__button">
-                                        <button class="button button_i" data-modal="user">i</button>
+                                            <button class="button button_i" data-modal="user">i</button>
                                     </td>
                                 </tr>
                             </table>
