@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Library</title>
+        <link rel="stylesheet" href="../static/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="../static/style.css">
         <link rel="stylesheet" href="bootstrap-reboot.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -13,7 +15,7 @@
                 <div class="header__logo">
                     <img src="img/logo.png" alt="logo" class="header__img">
                     <div class="header__text">
-                    Library
+                        <a href="#">Library</a>
                     </div>
                 </div>
                 <div class="header__menu">
@@ -23,7 +25,7 @@
             </div>
         </header>
 
-        
+        <!-- books -->        
         <div class="table table__books" id="books">
             <div class="container">
                 <div>
@@ -45,14 +47,14 @@
                                     <td class="table__colomn table__book" th:utext="${book.status}"></td>
                                     <td class="table__colomn table__button">
                                         <a th:href="@{'/deleteBook/' + ${book.id}}">
-                                            <button class="button">delete</button>
+                                            <button data-modal="booksdelete" class="button">delete</button>
                                         </a>
                                     </td>
                                     <td class="table__colomn table__button">
-                                        <button class="button">change</button>
+                                        <button data-modal="bookschange" class="button">change</button>
                                     </td>
                                     <td class="table__colomn table__button">
-                                        <button class="button">give</button>
+                                        <button data-modal="booksgive" class="button">give</button>
                                     </td>
                                     <td class="table__colomn table__button">
                                             <button class="button button_i" data-modal="user">i</button>
@@ -64,13 +66,14 @@
         
                     </div>
                     <div class="table__footbutton">
-                        <button data-modal="add" class="button table__add">add</button>
+                        <button data-modal="booksadd" class="button table__add">add</button>
                         <button data-modal="search" class="button table__search">search</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- readers -->
         <div class="table table__readers" id="readers">
             <div class="container">
                 <div>
@@ -180,13 +183,14 @@
         
                     </div>
                     <div class="table__footbutton">
-                        <button data-modal="add" class="button table__add">add</button>
+                        <button data-modal="readersadd" class="button table__add">add</button>
                         <button data-modal="search" class="button table__search">search</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- user -->
         <div class="table__users" id="user">
             <div class="container">
                 <div class="table__grid">
@@ -203,7 +207,7 @@
                                 
                             </div>
                             <div class="table__footbutton">
-                                <button data-modal="add" class="button button_u table__add">add</button>
+                                <button data-modal="userdelete" class="button button_u table__add">delete</button>
                                 <button data-modal="search" class="button button_u table__search">search</button>
                             </div>
                         </div>
@@ -225,7 +229,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>
                                         <tr class="table__user">
@@ -233,7 +237,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>
                                         <tr class="table__user">
@@ -241,7 +245,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr> 
                                         <tr class="table__user">
@@ -249,7 +253,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>  
                                         <tr class="table__user">
@@ -257,7 +261,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>  
                                         <tr class="table__user">
@@ -265,7 +269,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>
                                         <tr class="table__user">
@@ -273,7 +277,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>
                                         <tr class="table__user">
@@ -281,7 +285,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr> 
                                         <tr class="table__user">
@@ -289,7 +293,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>  
                                         <tr class="table__user">
@@ -297,7 +301,7 @@
                                             <td class="table__colomn table__author">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button class="button">give in</button>
+                                                <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>                 
                                     </table>
@@ -319,8 +323,11 @@
         <footer class="footer">
         </footer>
 
-<!--        add book-->
+        
+        
         <div class="overlay">
+
+            <!--add-->
             <div class="modal modal_add" id="add">
                 <div class="modal__close">
                     &times;
@@ -328,6 +335,41 @@
                 <form th:action="@{/addBook}" method="post">
                     <input name="name" required placeholder="Name" type="text">
                     <input name="author" required placeholder="Surname" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            
+            <!-- books add -->        
+            <div class="modal modal_add" id="booksadd">
+                <div class="modal__close">
+                    &times;
+                </div>
+                <form th:action="@{/addBook}" method="post">
+                    <input name="book" required placeholder="Book" type="text">
+                    <input name="author" required placeholder="Author" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- readers add --> 
+            <div class="modal modal_add" id="readersadd">
+                <div class="modal__close">
+                    &times;
+                </div>
+                <form th:action="@{/addBook}" method="post">
+                    <input name="name" required placeholder="Name" type="text">
+                    <input name="surname" required placeholder="Surname" type="text">
                     <div class="modal__button">
                         <div>
                             <button type="submit" class="button">ok</button>
@@ -357,8 +399,10 @@
                         
             </div>
         </div>
-        <script src="js/jquery-3.5.1.min.js"></script>
-        <script src="js/script.js"></script>
+        <script src="../static/js/jquery-3.5.1.min.js"></script>
+        <script src="../static/js/script.js"></script>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="script.js"></script>
     </body>
 
 </html>

@@ -22,6 +22,17 @@
         color: green;
         text-transform: uppercase;
         font-size: 55px;
+        a {
+            color: green;
+            font-size: 55px;
+            font-weight: bold;
+            :hover {
+                text-decoration: none;
+            }
+            :active {
+                text-decoration: underline;
+            }
+        }
     }
     &__menu {
         display: flex;
