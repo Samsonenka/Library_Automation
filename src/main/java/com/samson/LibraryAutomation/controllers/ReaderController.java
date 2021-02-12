@@ -5,6 +5,8 @@ import com.samson.LibraryAutomation.repo.ReaderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,5 +29,16 @@ public class ReaderController {
         modelMap.put("readersList", readerRepo.findAll());
 
         return "index";
+    }
+
+    @GetMapping("/infoReader/{id}")
+    public String infoReader (ModelMap modelMap,
+                              @PathVariable int id){
+
+        Reader reader = readerRepo.findById(id).get();
+
+        modelMap.put("reader", reader);
+
+        return "info";
     }
 }
