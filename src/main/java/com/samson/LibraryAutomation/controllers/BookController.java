@@ -18,6 +18,14 @@ public class BookController {
     @Autowired
     private BookRepo bookRepo;
 
+    @GetMapping("/")
+    public String main(ModelMap modelMap){
+
+        modelMap.put("booksList", bookRepo.findAll());
+
+        return "index";
+    }
+
     @PostMapping("/addBook")
     public String addBook(ModelMap modelMap,
                           @RequestParam String name, @RequestParam String author){
