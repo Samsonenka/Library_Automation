@@ -19,7 +19,7 @@ public class BookController {
     private BookRepo bookRepo;
 
     @GetMapping("/")
-    public String main(ModelMap modelMap){
+    public String mainBook(ModelMap modelMap){
 
         modelMap.put("booksList", bookRepo.findAll());
 

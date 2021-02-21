@@ -18,8 +18,13 @@ public class ReaderController {
     @Autowired
     private ReaderRepo readerRepo;
 
-    @Autowired
-    private BookRepo bookRepo;
+    @GetMapping("/readers")
+    public String mainReader(ModelMap modelMap){
+
+        modelMap.put("readersList", readerRepo.findAll());
+
+        return "readers";
+    }
 
     @PostMapping("/addReader")
     public String addReader(ModelMap modelMap,
@@ -31,12 +36,9 @@ public class ReaderController {
         Reader reader = new Reader(name, surname, address, email, phoneNumber);
         readerRepo.save(reader);
 
-        System.out.printf("wwwwwwww11111");
-
         modelMap.put("readersList", readerRepo.findAll());
-        modelMap.put("booksList", bookRepo.findAll());
 
-        return "index";
+        return "readers";
     }
 
     @GetMapping("/infoReader/{id}")
@@ -47,6 +49,6 @@ public class ReaderController {
 
         modelMap.put("reader", reader);
 
-        return "info";
+        return "user";
     }
 }

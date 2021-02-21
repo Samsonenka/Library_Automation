@@ -15,17 +15,15 @@
                 <div class="header__logo">
                     <img src="img/logo.png" alt="logo" class="header__img">
                     <div class="header__text">
-                        <a href="index.html">Library</a>
+                        <a th:href="@{/}">Library</a>
                     </div>
                 </div>
                 <div class="header__menu">
-                    <a href="index.html"  class="header__books">BOOKS</a>
-                    <a href="readers.html" class="header__readers">READERS</a>
+                    <a th:href="@{/}"  class="header__books">BOOKS</a>
+                    <a th:href="@{/readers}" class="header__readers">READERS</a>
                 </div>
             </div>
         </header>
-
-        
 
         <!-- readers -->
         <div class="table table__readers">
@@ -67,50 +65,12 @@
             </div>
         </div>
 
-
-        
-
         <footer class="footer">
         </footer>
 
         
         
         <div class="overlay">
-
-            <!--add-->
-            <div class="modal modal_add" id="add">
-                <div class="modal__close">
-                    &times;
-                </div>
-                <form th:action="@{/addBook}" method="post">
-                    <input name="name" required placeholder="Name" type="text">
-                    <input name="author" required placeholder="Surname" type="text">
-                    <div class="modal__button">
-                        <div>
-                            <button type="submit" class="button">ok</button>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-
-            
-            <!-- books add -->        
-            <div class="modal modal_add" id="booksadd">
-                <div class="modal__close">
-                    &times;
-                </div>
-                <form th:action="@{/addBook}" method="post">
-                    <input name="book" required placeholder="Book" type="text">
-                    <input name="author" required placeholder="Author" type="text">
-                    <div class="modal__button">
-                        <div>
-                            <button type="submit" class="button">ok</button>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
 
             <!-- readers add --> 
             <div class="modal modal_add" id="readersadd">
@@ -120,6 +80,9 @@
                 <form th:action="@{/addReader}" method="post">
                     <input name="name" required placeholder="Name" type="text">
                     <input name="surname" required placeholder="Surname" type="text">
+                    <input name="address" required placeholder="Address" type="text">
+                    <input name="email" required placeholder="Email" type="text">
+                    <input name="phoneNumber" required placeholder="Phone" type="text">
                     <div class="modal__button">
                         <div>
                             <button type="submit" class="button">ok</button>
@@ -129,17 +92,13 @@
 
             </div>
 
-<!--            find Books By Author or book's name-->
+<!--            find Reader By Surname -->
             <div class="modal modal_search" id="search">
                 <div class="modal__close">
                     &times;
                 </div>
-                <form th:action="@{/searchBook}" method="get">
-                    <select name="filter" id="filter">
-                        <option value="book">Book</option>
-                        <option value="author">Author</option>
-                    </select>
-                    <input name="name" required placeholder="Search" type="text">
+                <form th:action="@{/searchReader}" method="get">
+                    <input name="name" required placeholder="Surname" type="text">
                     <div class="modal__button">
                         <div>
                             <button type="submit" class="button">ok</button>
