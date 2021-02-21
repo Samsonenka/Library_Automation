@@ -25,92 +25,8 @@
             </div>
         </header>
 
-        <!-- books -->        
-        <div class="table table__books">
-            <div class="container">
-                <div>
-                    <div class="table__border">
-                        <div class="table__header">
-                            <div class="table__colomn">book</div>
-                            <div class="table__colomn">author</div>
-                            <div class="table__colomn">status</div>
-                            <div class="table__colomn">delete</div>
-                            <div class="table__colomn">give out</div>
-                            <div class="table__colomn">info</div>
-                        </div>
-                        <div class="table__scroll">
-                            <table cellpadding="7">
-                                <tr class="table__user" th:each ="book : ${booksList}">
-                                    <td class="table__colomn table__name" th:utext="${book.name}"></td>
-                                    <td class="table__colomn table__surname" th:utext="${book.author}"></td>
-                                    <td class="table__colomn table__book" th:utext="${book.status}"></td>
-                                    <td class="table__colomn table__button">
-                                        <a th:href="@{'/deleteBook/' + ${book.id}}">
-                                            <button data-modal="booksdelete" class="button">delete</button>
-                                        </a>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <button data-modal="booksgive" class="button">give</button>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                            <a href="user.html"><button class="button button_i" data-modal="user">i</button></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        
         
-                    </div>
-                    <div class="table__footbutton">
-                        <button data-modal="booksadd" class="button table__add">add</button>
-                        <button data-modal="search" class="button table__search">search</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- readers -->
-        <!-- <div class="table table__readers" id="readers">
-            <div class="container">
-                <div>
-                    <div class="table__border">
-                        <div class="table__header">
-                            <div class="table__colomn">name</div>
-                            <div class="table__colomn">surname</div>
-                            <div class="table__colomn">delete</div>
-                            <div class="table__colomn">info</div>
-                        </div>
-                        <div class="table__scroll">
-                            <table cellpadding="7">
-                                <tr class="table__user" th:each="reader : ${readersList}">
-                                    <td class="table__colomn table__name" th:utext="${reader.name}"></td>
-                                    <td class="table__colomn table__surname" th:utext="${reader.surname}"></td>
-                                    <td class="table__colomn table__button">
-                                        <a th:href="@{'/deleteReader/' + ${reader.id}}">
-                                            <button class="button">delete</button>
-                                        </a>
-                                    </td>
-                                    <td class="table__colomn table__button">
-                                        <a th:href="@{'/infoReader/' + ${reader.id}}">
-                                            <a href="user.html"><button class="button button_i" data-modal="user">i</button></a>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-
-
-                    </div>
-                    <div class="table__footbutton">
-                        <button data-modal="readersadd" class="button table__add">add</button>
-                        <button data-modal="search" class="button table__search">search</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- user -->
-<!--         <div class="table__users" id="user">
+        <div class="table__users">
             <div class="container">
                 <div class="table__grid">
                     <div>
@@ -236,14 +152,14 @@
 
                 
             </div>
-        </div>     -->    
+        </div>        
         
 
         <footer class="footer">
         </footer>
 
-
-
+        
+        
         <div class="overlay">
 
             <!--add-->
@@ -263,13 +179,14 @@
 
             </div>
 
+            
             <!-- books add -->        
             <div class="modal modal_add" id="booksadd">
                 <div class="modal__close">
                     &times;
                 </div>
                 <form th:action="@{/addBook}" method="post">
-                    <input name="name" required placeholder="Book" type="text">
+                    <input name="book" required placeholder="Book" type="text">
                     <input name="author" required placeholder="Author" type="text">
                     <div class="modal__button">
                         <div>
@@ -277,6 +194,7 @@
                         </div>
                     </div>
                 </form>
+
             </div>
 
             <!-- readers add --> 
@@ -287,15 +205,13 @@
                 <form th:action="@{/addReader}" method="post">
                     <input name="name" required placeholder="Name" type="text">
                     <input name="surname" required placeholder="Surname" type="text">
-                    <input name="address" required placeholder="Address" type="text">
-                    <input name="email" required placeholder="Email" type="text">
-                    <input name="phoneNumber" required placeholder="Phone" type="text">
                     <div class="modal__button">
                         <div>
                             <button type="submit" class="button">ok</button>
                         </div>
                     </div>
                 </form>
+
             </div>
 
 <!--            find Books By Author or book's name-->

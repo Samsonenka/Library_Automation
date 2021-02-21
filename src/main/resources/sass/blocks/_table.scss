@@ -1,5 +1,5 @@
 .table {
-    position: fixed;
+    
     height: 100%;
     margin: 0 auto;
     table {
@@ -7,12 +7,7 @@
         border: none;
         border-collapse: collapse;
     }
-    &__books {
-        margin-left: 200px;
-    }
-    &__readers {
-        margin-left: 200px;
-    }
+
     &__scroll {
         margin-top: 15px;
         margin-bottom: 20px;
@@ -53,7 +48,6 @@
 
     }
     &__users {
-        display: none;
         margin: 0 auto;
 
     }

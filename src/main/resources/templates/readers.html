@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Library</title>
+        <link rel="stylesheet" href="../static/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="header__logo">
+                    <img src="img/logo.png" alt="logo" class="header__img">
+                    <div class="header__text">
+                        <a href="index.html">Library</a>
+                    </div>
+                </div>
+                <div class="header__menu">
+                    <a href="index.html"  class="header__books">BOOKS</a>
+                    <a href="readers.html" class="header__readers">READERS</a>
+                </div>
+            </div>
+        </header>
+
+        
+
+        <!-- readers -->
+        <div class="table table__readers">
+            <div class="container">
+                <div>
+                    <div class="table__border">
+                        <div class="table__header">
+                            <div class="table__colomn">name</div>
+                            <div class="table__colomn">surname</div>
+                            <div class="table__colomn">delete</div>
+                            <div class="table__colomn">info</div>
+                        </div>
+                        <div class="table__scroll">
+                            <table cellpadding="7">
+                                <tr class="table__user" th:each="reader : ${readersList}">
+                                    <td class="table__colomn table__name" th:utext="${reader.name}"></td>
+                                    <td class="table__colomn table__surname" th:utext="${reader.surname}"></td>
+                                    <td class="table__colomn table__button">
+                                        <a th:href="@{'/deleteReader/' + ${reader.id}}">
+                                            <button class="button">delete</button>
+                                        </a>
+                                    </td>
+                                    <td class="table__colomn table__button">
+                                        <a th:href="@{'/infoReader/' + ${reader.id}}">
+                                            <a href="user.html"><button class="button button_i" data-modal="user">i</button></a>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                    </div>
+                    <div class="table__footbutton">
+                        <button data-modal="readersadd" class="button table__add">add</button>
+                        <button data-modal="search" class="button table__search">search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+        <footer class="footer">
+        </footer>
+
+        
+        
+        <div class="overlay">
+
+            <!--add-->
+            <div class="modal modal_add" id="add">
+                <div class="modal__close">
+                    &times;
+                </div>
+                <form th:action="@{/addBook}" method="post">
+                    <input name="name" required placeholder="Name" type="text">
+                    <input name="author" required placeholder="Surname" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            
+            <!-- books add -->        
+            <div class="modal modal_add" id="booksadd">
+                <div class="modal__close">
+                    &times;
+                </div>
+                <form th:action="@{/addBook}" method="post">
+                    <input name="book" required placeholder="Book" type="text">
+                    <input name="author" required placeholder="Author" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- readers add --> 
+            <div class="modal modal_add" id="readersadd">
+                <div class="modal__close">
+                    &times;
+                </div>
+                <form th:action="@{/addReader}" method="post">
+                    <input name="name" required placeholder="Name" type="text">
+                    <input name="surname" required placeholder="Surname" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+<!--            find Books By Author or book's name-->
+            <div class="modal modal_search" id="search">
+                <div class="modal__close">
+                    &times;
+                </div>
+                <form th:action="@{/searchBook}" method="get">
+                    <select name="filter" id="filter">
+                        <option value="book">Book</option>
+                        <option value="author">Author</option>
+                    </select>
+                    <input name="name" required placeholder="Search" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+                        
+            </div> 
+        </div>
+        <script src="../static/js/jquery-3.5.1.min.js"></script>
+        <script src="../static/js/script.js"></script>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
