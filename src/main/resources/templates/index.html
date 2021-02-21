@@ -116,8 +116,8 @@
         <footer class="footer">
         </footer>
 
-        
-        
+
+
         <div class="overlay">
 
             <!--add-->
@@ -137,7 +137,6 @@
 
             </div>
 
-            
             <!-- books add -->        
             <div class="modal modal_add" id="booksadd">
                 <div class="modal__close">
@@ -152,7 +151,6 @@
                         </div>
                     </div>
                 </form>
-
             </div>
 
             <!-- readers add --> 
@@ -163,13 +161,15 @@
                 <form th:action="@{/addReader}" method="post">
                     <input name="name" required placeholder="Name" type="text">
                     <input name="surname" required placeholder="Surname" type="text">
+                    <input name="address" required placeholder="Address" type="text">
+                    <input name="email" required placeholder="Email" type="text">
+                    <input name="phoneNumber" required placeholder="Phone" type="text">
                     <div class="modal__button">
                         <div>
                             <button type="submit" class="button">ok</button>
                         </div>
                     </div>
                 </form>
-
             </div>
 
 <!--            find Books By Author or book's name-->
