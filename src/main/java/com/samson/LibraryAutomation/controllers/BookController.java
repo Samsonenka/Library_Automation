@@ -7,11 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 @Controller
 public class BookController {
@@ -45,10 +42,7 @@ public class BookController {
     public String searchBook(ModelMap modelMap,
                              @RequestParam String name, @RequestParam String filter){
 
-        Book book = new Book();
-        List<Book> bookList = book.findBook(bookService.getBooks(), filter, name);
-
-        modelMap.put("booksList", bookList);
+        modelMap.put("booksList", bookService.findBookByNameOrAuthor(name, filter));
 
         return "index";
     }

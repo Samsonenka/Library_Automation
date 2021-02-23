@@ -5,6 +5,7 @@ import com.samson.LibraryAutomation.repo.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -25,5 +26,45 @@ public class BookService {
 
         Book book = new Book(name, author);
         bookRepo.save(book);
+    }
+
+    public List<Book> findBookByNameOrAuthor(String name, String filter) {
+
+        List<Book> booksList = new ArrayList<>();
+
+        switch (filter){
+
+            case "book":
+                booksList = findByBook(name);
+                break;
+            case "author":
+                booksList = findByAuthor(name);
+                break;
+        }
+        return booksList;
+    }
+
+    public List<Book> findByBook(String book) {
+
+        List<Book> booksList = new ArrayList<>();
+
+        for (Book value: getBooks()) {
+            if (value.getName().equals(book)){
+                booksList.add(value);
+            }
+        }
+        return booksList;
+    }
+
+    public List<Book> findByAuthor(String author){
+
+        List<Book> booksList = new ArrayList<>();
+
+        for (Book value: getBooks()) {
+            if (value.getAuthor().equals(author)){
+                booksList.add(value);
+            }
+        }
+        return booksList;
     }
 }
