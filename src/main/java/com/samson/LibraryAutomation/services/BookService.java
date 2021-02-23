@@ -28,6 +28,10 @@ public class BookService {
         bookRepo.save(book);
     }
 
+    public void deleteBook(int id) {
+        bookRepo.delete(bookRepo.findById(id).get());
+    }
+
     public List<Book> findBookByNameOrAuthor(String name, String filter) {
 
         List<Book> booksList = new ArrayList<>();
