@@ -5,6 +5,7 @@ import com.samson.LibraryAutomation.repo.ReaderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -36,5 +37,17 @@ public class ReaderService {
 
     public Object findReaderById(int id) {
         return readerRepo.findById(id).get();
+    }
+
+    public  List<Reader> findReaderBySurname(String name) {
+
+        List<Reader> newReadersList = new ArrayList<>();
+
+        for (Reader value: readerRepo.findAll()) {
+            if (value.getSurname().equals(name)){
+                newReadersList.add(value);
+            }
+        }
+        return newReadersList;
     }
 }

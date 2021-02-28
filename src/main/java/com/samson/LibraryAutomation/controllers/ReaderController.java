@@ -66,4 +66,13 @@ public class ReaderController {
 
         return "user";
     }
+
+    @GetMapping("/searchReader")
+    public String searchReader(ModelMap modelMap,
+                               @RequestParam String name){
+
+        modelMap.put("readersList", readerService.findReaderBySurname(name));
+
+        return "readers";
+    }
 }
