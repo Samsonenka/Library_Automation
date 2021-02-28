@@ -44,6 +44,17 @@ public class ReaderController {
         return "readers";
     }
 
+
+    @GetMapping("/deleteReader/{id}")
+    public String deleteReader(ModelMap modelMap,
+                               @PathVariable int id){
+
+        readerService.deleteReader(id);
+        modelMap.put("readersList", readerService.getReaders());
+
+        return "readers";
+    }
+
 //    @GetMapping("/infoReader/{id}")
 //    public String infoReader (ModelMap modelMap,
 //                              @PathVariable int id){

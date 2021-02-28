@@ -27,4 +27,10 @@ public class ReaderService {
         Reader reader = new Reader(name, surname, address, email, phoneNumber);
         readerRepo.save(reader);
     }
+
+    public void deleteReader(int id) {
+
+        Reader reader = readerRepo.findById(id).get();
+        readerRepo.delete(reader);
+    }
 }
