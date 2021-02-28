@@ -35,11 +35,12 @@
                     <div>
                         <div class="table__userinfo">
                             <div>                    
-                                <div>name</div>
-                                <div>surname</div>
-                                <div>adress</div>
-                                <div>email</div>
-                                
+                                <div th:text="${reader.name}"></div>
+                                <div th:text="${reader.surname}"></div>
+                                <div th:text="${reader.address}"></div>
+                                <div th:text="${reader.email}"></div>
+                                <div th:text="${reader.phoneNumber}"></div>
+
                             </div>
                             <div class="table__footbutton">
                                 <button data-modal="userdelete" class="button button_u table__add">delete</button>

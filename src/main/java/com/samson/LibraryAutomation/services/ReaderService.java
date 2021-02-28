@@ -33,4 +33,8 @@ public class ReaderService {
         Reader reader = readerRepo.findById(id).get();
         readerRepo.delete(reader);
     }
+
+    public Object findReaderById(int id) {
+        return readerRepo.findById(id).get();
+    }
 }

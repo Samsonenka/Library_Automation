@@ -1,6 +1,6 @@
 package com.samson.LibraryAutomation.controllers;
 
-import com.samson.LibraryAutomation.models.Reader;
+import com.samson.LibraryAutomation.services.BookService;
 import com.samson.LibraryAutomation.services.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +16,12 @@ public class ReaderController {
 
 
     private final ReaderService readerService;
+    private final BookService bookService;
 
     @Autowired
-    public ReaderController(ReaderService readerService) {
+    public ReaderController(ReaderService readerService, BookService bookService) {
         this.readerService = readerService;
+        this.bookService = bookService;
     }
 
 
@@ -55,14 +57,13 @@ public class ReaderController {
         return "readers";
     }
 
-//    @GetMapping("/infoReader/{id}")
-//    public String infoReader (ModelMap modelMap,
-//                              @PathVariable int id){
-//
-//        Reader reader = readerRepo.findById(id).get();
-//
-//        modelMap.put("reader", reader);
-//
-//        return "user";
-//    }
+    @GetMapping("/infoReader/{id}")
+    public String infoReader (ModelMap modelMap,
+                              @PathVariable int id){
+
+        modelMap.put("reader", readerService.findReaderById(id));
+        modelMap.put("booksList", bookService.getBooks());
+
+        return "user";
+    }
 }
