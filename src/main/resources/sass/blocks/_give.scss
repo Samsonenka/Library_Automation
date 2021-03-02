@@ -1,0 +1,22 @@
+.give {
+    font-size: 18px;
+    &__book {
+        font-size: 22px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+    }
+    &__select {
+        width: 400px;
+        margin-top: 30px;
+    }
+    &__option {
+        text-align: center;
+    }
+    &__bookid {
+        display: none;
+    }
+    &__button {
+        margin-top: 100px;
+    }
+}

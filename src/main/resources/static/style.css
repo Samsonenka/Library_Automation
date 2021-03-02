@@ -296,4 +296,32 @@ body {
   color: black;
   cursor: pointer;
 }
+
+.give {
+  font-size: 18px;
+}
+
+.give__book {
+  font-size: 22px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+.give__select {
+  width: 400px;
+  margin-top: 30px;
+}
+
+.give__option {
+  text-align: center;
+}
+
+.give__bookid {
+  display: none;
+}
+
+.give__button {
+  margin-top: 100px;
+}
 /*# sourceMappingURL=style.css.map */

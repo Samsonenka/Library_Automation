@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Library</title>
+        <link rel="stylesheet" href="../static/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="header__logo">
+                    <img src="img/logo.png" alt="logo" class="header__img">
+                    <div class="header__text">
+                        <a th:href="@{/}">Library</a>
+                    </div>
+                </div>
+                <div class="header__menu">
+                    <a th:href="@{/}"  class="header__books">BOOKS</a>
+                    <a th:href="@{/readers}" class="header__readers">READERS</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="give" id="give">
+            <div class="container">
+
+                <form th:action="@{/searchBook}" method="get">
+                    <div class="give__book">
+                        book name
+                    </div>
+                    <select class='give__select' name="filter" id="filter">
+                        <option class='give__option' value="giveuser">give user</option>
+                        <option class='give__option' value="giveuser">give user</option>
+                    </select>
+                    <div class="give__bookid">id_book</div>                    
+                    <div class="modal__button give__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
+        <footer class="footer">
+        </footer>
+
+
+
+        <div class="overlay">
+
+            <!-- books add -->        
+            <div class="modal modal_add" id="booksadd">
+                <div class="modal__close">
+                    &times;
+                </div>
+                <form th:action="@{/addBook}" method="post">
+                    <input name="name" required placeholder="Book" type="text">
+                    <input name="author" required placeholder="Author" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+<!--            find Books By Author or book's name-->
+            <div class="modal modal_search" id="search">
+                <div class="modal__close">
+                    &times;
+                </div>
+                <form th:action="@{/searchBook}" method="get">
+                    <select name="filter" id="filter">
+                        <option value="book">Book</option>
+                        <option value="author">Author</option>
+                    </select>
+                    <input name="name" required placeholder="Search" type="text">
+                    <div class="modal__button">
+                        <div>
+                            <button type="submit" class="button">ok</button>
+                        </div>
+                    </div>
+                </form>
+                        
+            </div> 
+        </div>
+        <script src="../static/js/jquery-3.5.1.min.js"></script>
+        <script src="../static/js/script.js"></script>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
