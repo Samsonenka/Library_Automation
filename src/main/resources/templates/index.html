@@ -50,7 +50,7 @@
                                         </a>
                                     </td>
                                     <td class="table__colomn table__button">
-                                        <button data-modal="booksgive" class="button">give</button>
+                                        <a th:href="@{'/give/' + ${book.id}}"><button data-modal="booksgive" class="button">give</button></a>
                                     </td>
                                     <td class="table__colomn table__button">
                                             <a href="user.html"><button class="button button_i" data-modal="user">i</button></a>

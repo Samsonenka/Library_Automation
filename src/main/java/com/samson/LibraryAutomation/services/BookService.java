@@ -71,4 +71,8 @@ public class BookService {
         }
         return booksList;
     }
+
+    public Object getBookById(int id) {
+        return bookRepo.findById(id).get();
+    }
 }
