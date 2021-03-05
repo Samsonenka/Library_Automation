@@ -60,86 +60,15 @@
                                 </div>
                                 <div class="table__scroll table__scroll-userbook">
                                     <table cellpadding="7">
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
+                                        <tr class="table__user" th:each ="book : ${booksList}">
+                                            <td class="table__colomn table__book" th:utext="${book.name}">book</td>
+                                            <td class="table__colomn table__author" th:utext="${book.author}">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
                                                 <button data-modal="userbooksgivein" class="button">give in</button>
                                             </td>
                                         </tr>
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr>
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr> 
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr>  
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr>  
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr>
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr>
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr> 
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr>  
-                                        <tr class="table__user">
-                                            <td class="table__colomn table__book">book</td>
-                                            <td class="table__colomn table__author">author</td>
-                                            <td class="table__colomn table__date">date</td>
-                                            <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
-                                            </td>
-                                        </tr>                 
+
                                     </table>
                                 </div>
                                 

@@ -1,5 +1,6 @@
 package com.samson.LibraryAutomation.controllers;
 
+import com.samson.LibraryAutomation.models.Reader;
 import com.samson.LibraryAutomation.services.BookService;
 import com.samson.LibraryAutomation.services.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +63,18 @@ public class ReaderController {
                               @PathVariable int id){
 
         modelMap.put("reader", readerService.findReaderById(id));
-        modelMap.put("booksList", bookService.getBooks());
+        modelMap.put("booksList", bookService.getBooks(readerService.findReaderById(id)));
+//        поправить!!!!!!
+
+        return "user";
+    }
+
+    @GetMapping("/infoReaderByBook/{id}")
+    public String infoReaderByBook (ModelMap modelMap,
+                                    @PathVariable int id){
+
+        modelMap.put("reader", readerService.findReaderByBookId(id));
+        modelMap.put("booksList", bookService.getBooks(readerService.findReaderByBookId(id)));
 
         return "user";
     }

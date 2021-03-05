@@ -1,7 +1,10 @@
 package com.samson.LibraryAutomation.services;
 
 import com.samson.LibraryAutomation.models.Book;
+import com.samson.LibraryAutomation.models.Reader;
+import com.samson.LibraryAutomation.models.RentBook;
 import com.samson.LibraryAutomation.repo.BookRepo;
+import com.samson.LibraryAutomation.repo.RentBookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,15 +15,32 @@ import java.util.List;
 public class BookService {
 
     private final BookRepo bookRepo;
+    private final RentBookRepo rentBookRepo;
 
     @Autowired
-    public BookService(BookRepo bookRepo) {
+    public BookService(BookRepo bookRepo, RentBookRepo rentBookRepo) {
         this.bookRepo = bookRepo;
+        this.rentBookRepo = rentBookRepo;
     }
 
     public List<Book> getBooks(){
         return bookRepo.findAll();
     }
+
+    public List<Book> getBooks(Reader reader){
+
+        List<RentBook> rentBookList = rentBookRepo.findAll();
+        List<Book> bookList = new ArrayList<>();
+
+        for (RentBook value: rentBookList) {
+            if (value.getReader().getId() == reader.getId()){
+                bookList.add(value.getBook());
+            }
+        }
+
+        return bookList;
+    }
+
 
     public void addNewBook(String name, String author){
 

@@ -1,7 +1,9 @@
 package com.samson.LibraryAutomation.services;
 
 import com.samson.LibraryAutomation.models.Reader;
+import com.samson.LibraryAutomation.models.RentBook;
 import com.samson.LibraryAutomation.repo.ReaderRepo;
+import com.samson.LibraryAutomation.repo.RentBookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +14,12 @@ import java.util.List;
 public class ReaderService {
 
     private final ReaderRepo readerRepo;
+    private final RentBookRepo rentBookRepo;
 
     @Autowired
-    public ReaderService(ReaderRepo readerRepo) {
+    public ReaderService(ReaderRepo readerRepo, RentBookRepo rentBookRepo) {
         this.readerRepo = readerRepo;
+        this.rentBookRepo = rentBookRepo;
     }
 
 
@@ -35,7 +39,7 @@ public class ReaderService {
         readerRepo.delete(reader);
     }
 
-    public Object findReaderById(int id) {
+    public Reader findReaderById(int id) {
         return readerRepo.findById(id).get();
     }
 
@@ -50,4 +54,18 @@ public class ReaderService {
         }
         return newReadersList;
     }
+
+    public Reader findReaderByBookId(int id) {
+
+        List<RentBook> rentBookList = rentBookRepo.findAll();
+        Reader reader = new Reader();
+
+        for (RentBook value: rentBookList) {
+            if (value.getBook().getId() == id){
+                reader = value.getReader();
+            }
+        }
+        return reader;
+    }
+
 }
