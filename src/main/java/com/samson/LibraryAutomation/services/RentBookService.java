@@ -8,6 +8,8 @@ import com.samson.LibraryAutomation.repo.RentBookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RentBookService {
 
@@ -31,5 +33,17 @@ public class RentBookService {
 
         RentBook rentBook = new RentBook(bookRepo.findById(bookID).get(), readerRepo.findById(readerID).get());
         rentBookRepo.save(rentBook);
+    }
+
+    public void giveInBook(int id) {
+
+        List<RentBook> rentBookList = rentBookRepo.findAll();
+
+        for (RentBook value: rentBookList) {
+            if (value.getBook().getId() == id){
+                value.getBook().setStatus(true);
+                rentBookRepo.delete(value);
+            }
+        }
     }
 }

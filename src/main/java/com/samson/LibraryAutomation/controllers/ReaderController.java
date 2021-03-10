@@ -1,6 +1,5 @@
 package com.samson.LibraryAutomation.controllers;
 
-import com.samson.LibraryAutomation.models.Reader;
 import com.samson.LibraryAutomation.services.BookService;
 import com.samson.LibraryAutomation.services.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +37,7 @@ public class ReaderController {
     public String addReader(ModelMap modelMap,
                             @RequestParam String name, @RequestParam String surname,
                             @RequestParam String address, @RequestParam String email,
-                            @RequestParam int phoneNumber
+                            @RequestParam Float phoneNumber
                             ){
 
         readerService.addNewReader(name, surname, address, email, phoneNumber);
@@ -64,7 +63,6 @@ public class ReaderController {
 
         modelMap.put("reader", readerService.findReaderById(id));
         modelMap.put("booksList", bookService.getBooks(readerService.findReaderById(id)));
-//        поправить!!!!!!
 
         return "user";
     }

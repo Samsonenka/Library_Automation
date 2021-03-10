@@ -35,6 +35,16 @@ public class RentBookController {
         return "give";
     }
 
+    @GetMapping("/giveInBook/{id}")
+    public String giveIn (ModelMap modelMap,
+                          @PathVariable int id){
+
+        rentBookService.giveInBook(id);
+        modelMap.put("booksList", bookService.getBooks());
+
+        return "index";
+    }
+
     @PostMapping("/rentBook")
     public String rentBook(ModelMap modelMap,
                            @RequestParam int readerID,

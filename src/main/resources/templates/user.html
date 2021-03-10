@@ -65,7 +65,7 @@
                                             <td class="table__colomn table__author" th:utext="${book.author}">author</td>
                                             <td class="table__colomn table__date">date</td>
                                             <td class="table__colomn table__button">
-                                                <button data-modal="userbooksgivein" class="button">give in</button>
+                                                <a th:href="@{'/giveInBook/' + ${book.id}}"><button data-modal="userbooksgivein" class="button">give in</button></a>
                                             </td>
                                         </tr>
 
