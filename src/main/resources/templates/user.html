@@ -43,7 +43,7 @@
 
                             </div>
                             <div class="table__footbutton">
-                                <button data-modal="userdelete" class="button button_u table__add">delete</button>
+                                <a th:href="@{'/deleteReader/' + ${reader.id}}"><button data-modal="userdelete" class="button button_u table__add">delete</button></a>
                                 <button data-modal="search" class="button button_u table__search">search</button>
                             </div>
                         </div>

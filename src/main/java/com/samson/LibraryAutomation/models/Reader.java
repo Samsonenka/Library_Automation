@@ -18,14 +18,12 @@ public class Reader {
     private String surname;
     private String address;
     private String email;
-    private Float phoneNumber;
-
-    //изменить тип номер телефона
+    private Long phoneNumber;
 
     public Reader() {
     }
 
-    public Reader(String name, String surname, String address, String email, Float phoneNumber) {
+    public Reader(String name, String surname, String address, String email, Long phoneNumber) {
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -85,11 +83,11 @@ public class Reader {
         this.email = email;
     }
 
-    public Float getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Float phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }

@@ -37,7 +37,7 @@ public class ReaderController {
     public String addReader(ModelMap modelMap,
                             @RequestParam String name, @RequestParam String surname,
                             @RequestParam String address, @RequestParam String email,
-                            @RequestParam Float phoneNumber
+                            @RequestParam Long phoneNumber
                             ){
 
         readerService.addNewReader(name, surname, address, email, phoneNumber);

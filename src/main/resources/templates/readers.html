@@ -33,7 +33,6 @@
                         <div class="table__header">
                             <div class="table__colomn">name</div>
                             <div class="table__colomn">surname</div>
-                            <div class="table__colomn">delete</div>
                             <div class="table__colomn">info</div>
                         </div>
                         <div class="table__scroll">
@@ -41,11 +40,6 @@
                                 <tr class="table__user" th:each="reader : ${readersList}">
                                     <td class="table__colomn table__name" th:utext="${reader.name}"></td>
                                     <td class="table__colomn table__surname" th:utext="${reader.surname}"></td>
-                                    <td class="table__colomn table__button">
-                                        <a th:href="@{'/deleteReader/' + ${reader.id}}">
-                                            <button class="button">delete</button>
-                                        </a>
-                                    </td>
                                     <td class="table__colomn table__button">
                                         <a th:href="@{'/infoReader/' + ${reader.id}}">
                                             <button class="button button_i" data-modal="user">i</button>

@@ -27,7 +27,7 @@ public class ReaderService {
         return readerRepo.findAll();
     }
 
-    public void addNewReader(String name, String surname, String address, String email, Float phoneNumber) {
+    public void addNewReader(String name, String surname, String address, String email, Long phoneNumber) {
 
         Reader reader = new Reader(name, surname, address, email, phoneNumber);
         readerRepo.save(reader);
