@@ -51,7 +51,7 @@ public class ReaderController {
     public String deleteReader(ModelMap modelMap,
                                @PathVariable int id){
 
-        readerService.deleteReader(id);
+        modelMap.put("info", readerService.deleteReader(id));
         modelMap.put("readersList", readerService.getReaders());
 
         return "readers";

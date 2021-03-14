@@ -33,10 +33,25 @@ public class ReaderService {
         readerRepo.save(reader);
     }
 
-    public void deleteReader(int id) {
+    public String deleteReader(int id) {
 
-        Reader reader = readerRepo.findById(id).get();
+        Reader reader = findReaderById(id);
+        List<RentBook> rentBookList = rentBookRepo.findAll();
+        int counter = 0;
+
+        for (RentBook value: rentBookList) {
+            if (value.getReader().getId() == reader.getId()){
+                counter++;
+            }
+        }
+
+        if (counter > 0) {
+            return "Unable to delete a reader. He has books.";
+        }
+
         readerRepo.delete(reader);
+
+        return "Reader deleted successfully";
     }
 
     public Reader findReaderById(int id) {

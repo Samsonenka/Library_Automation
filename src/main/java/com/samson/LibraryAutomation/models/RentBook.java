@@ -6,8 +6,6 @@ import java.time.LocalDate;
 @Entity
 public class RentBook {
 
-    //проверка на наличие книг
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
